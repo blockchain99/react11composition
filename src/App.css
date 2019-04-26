@@ -72,6 +72,22 @@
   color: burlywood;
   font-size: 15px
 }
+.FancyBorder {
+  padding: 10px;
+  background: turquoise;
+  border: 2px solid
+}
+.FancyBorder-blue {
+  padding: 10px;
+  background: turquoise;
+  border: 2px solid blue
+}
+.SplitPane-left {
+  background: skyblue
+}
+.SplitPane-right {
+  background: tan
+}
 
 :root {
   --button-color: silver;

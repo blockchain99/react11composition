@@ -7,6 +7,8 @@ import FormatName from './FormatName';
 import NumberList from './NumberList';
 import FlavorForm from './FlavorForm';
 import Calculator from './Calculator';
+import WelcomeDialog1 from './WelcomeDialog1';
+import WelcomeDialog from './WelcomeDialog';      
 
 class App extends Component {
   constructor(props) {
@@ -73,6 +75,8 @@ class App extends Component {
           </form>
           <FlavorForm />
           <Calculator />
+          <WelcomeDialog1 msg={this.state.value} />
+          <WelcomeDialog />
         </header>
       </div>
     );

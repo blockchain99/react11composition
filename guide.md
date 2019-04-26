@@ -41,7 +41,22 @@ import Select from 'react-select';
 ## vs code : user Interfac :
 * https://code.visualstudio.com/docs/getstarted/userinterface
 * Activity Bar, Side Bar, Stasut Bar, Panel, Editor Groups
-  
+* **tab** size to **2** from 5 -> settings.json
+  * new version of Visual Studio Code allows you to specify differently file type for the tabSize. Here is the example of my settings.json with default 4 spaces and JavaScript/JSON 2 spaces:
+  *  Linux $HOME/.config/Code/User/settings.json
+```
+{
+  // I want my default to be 4, but JS/JSON to be 2
+  "editor.tabSize": 4,
+  "[javascript]": {
+    "editor.tabSize": 2
+  },
+  "[json]": {
+    "editor.tabSize": 2
+  }
+}
+```
+
 ### lifting state up :
 * Often, several components need to reflect the same changing data. We recommend lifting the shared state up to their closest common ancestor.
 
@@ -67,6 +82,7 @@ module.exports = {
 ### prettier vs beautify 
 https://css-tricks.com/prettier-beautify/ 
 * Vs code plugin beautify -> installed but it stop working prettier, so settings.json
+* Linux $HOME/.config/Code/User/settings.json
 ```
 {
  ...
@@ -82,4 +98,22 @@ https://css-tricks.com/prettier-beautify/
 * https://marketplace.visualstudio.com/items?itemName=HookyQR.beautify
 * js-beautify for VS Code:  Beautify javascript, JSON, CSS, Sass, and HTML in Visual Studio Code.
 
-* VS Code uses js-beautify internally, but it lacks the ability to modify the style you wish to use. This extension enables running js-beautify in VS Code, AND honouring any .jsbeautifyrc file in the open file's path tree to load your code styling. Run with F1 Beautify (to beautify a selection) or F1 Beautify file.********
+* VS Code uses js-beautify internally, but it lacks the ability to modify the style you wish to use. This extension enables running js-beautify in VS Code, AND honouring any .jsbeautifyrc file in the open file's path tree to load your code styling. Run with F1 Beautify (to beautify a selection) or F1 Beautify file.
+  
+### react-split-pane :
+* npm install react-split-pane
+```
+<SplitPane split="vertical" minSize={50} defaultSize={100}>
+     <div></div>
+     <div></div>
+ </SplitPane>
+  <SplitPane split="vertical" minSize={50}>
+      <div></div>
+      <SplitPane split="horizontal">
+          <div></div>
+          <div></div>
+      </SplitPane>
+  </SplitPane>
+```
+* In xx.js file,  `` import SplitPane from 'react-split-pane'; ``
+* 
