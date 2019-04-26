@@ -1,5 +1,5 @@
 import React from 'react'
-
+import SplitPane from 'react-split-pane';
 function FancyBorder(props) {
   return (
     <div className={'FancyBorder FancyBorder-' + props.color} >
@@ -11,16 +11,26 @@ function FancyBorder(props) {
 /*sometimes you might need multiple “holes” in a component. 
 In such cases you may come up with your own convention 
 instead of using children  */
-function SplitPane(props) {
+function SplitP(props) {
+  // return (
+  //   <div className="SplitPane">
+  //     <div className="SplitPane-left">
+  //       {props.left}
+  //     </div>
+  //     <div className="SplitPane-right">
+  //       {props.right}
+  //     </div>
+  //   </div>
+  // );
   return (
-    <div className="SplitPane">
-      <div className="SplitPane-left">
-        {props.left}
-      </div>
-      <div className="SplitPane-right">
-        {props.right}
-      </div>
-    </div>
+    <SplitPane split="vertical" minSize={100} defaultSize={200}>
+     <div className="SplitPane-left">
+      {props.left}
+     </div>
+     <div className="SplitPane-right">
+      {props.right}
+     </div>
+    </SplitPane>
   );
 }
 
@@ -51,7 +61,7 @@ function WelcomeDialog() {
           Thanks for vising Solid.dev
         </p>
       </FancyBorder>
-      <SplitPane 
+      <SplitP 
         left={
         <Contacts /> 
         }
